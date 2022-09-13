@@ -24,7 +24,8 @@ namespace HotelListing.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Country>>> GetCountries()
         {
-            return await _context.Countries.ToListAsync();
+            var country = await _context.Countries.ToListAsync();
+            return Ok(country);
         }
 
         // GET: api/Countries/5
@@ -38,7 +39,7 @@ namespace HotelListing.Controllers
                 return NotFound();
             }
 
-            return country;
+            return Ok(country);
         }
 
         // PUT: api/Countries/5
