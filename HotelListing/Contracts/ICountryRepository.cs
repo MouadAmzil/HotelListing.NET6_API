@@ -2,7 +2,8 @@
 
 namespace HotelListing.Contracts
 {
-    public interface ICountryRepository : IGenericRepository<Country>
+    public interface ICountriesRepository: IGenericRepository<Country>
     {
+        Task<Country> GetDetails(int id);
     }
 }
